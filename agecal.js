@@ -1,12 +1,25 @@
 let month = $("#month");
 let btn = $(".button");
 let message = $(".message");
+const year = $(".year");
+const months = $(".months");
+const day = $(".day");
 
 
 btn.on("click",function()
 {
     calculate();
+    visible();
+    
 });
+
+function visible()
+{
+   message.css("display","inline");
+   year.css("display","inline");
+   months.css("display","inline");
+   day.css("display","inline");
+}
 
 function calculate ()
 {
@@ -23,7 +36,14 @@ function calculate ()
 if (presentMonth < 0) {
     presentYear -= 1;
     presentMonth += 12;
+  }
+if(presentYear < 0)
+{
+    year.text("");
 }
-   let updateMessage = message.text(`You have ${presentYear} years,${presentMonth} months and ${presentDay} days`);
-    presentDay.css("color","yellow")
+
+   let updateYear = year.text(`${presentYear} year`);
+   let updateMonth = months.text(`${presentMonth} months`);
+   let updateDay = day.text(`${presentDay} day`);
+   
 }
