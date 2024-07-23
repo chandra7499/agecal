@@ -2,22 +2,26 @@ body
 {
     background: linear-gradient(110.6deg, rgb(184, 142, 252) 2.2%, rgb(104, 119, 244) 100.2%);
     display: flex;
-    justify-content: flex-start;
+    justify-content:flex-start;
     align-items: center;
-    height:70vh;
-    border:none ;
+    height:100vh;
+    overflow: scroll;
+  
+    background-size: contain;
 
 }
 
 .head
 {
-    background: radial-gradient(circle at 30% 90%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+    background: linear-gradient(270deg, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
     -webkit-background-clip: text;
     clip-path: text;
     color:transparent; 
     font-family: serif; 
     font-size: 70px;
-    margin-bottom: 20px;  
+    margin-bottom: 20px; 
+    min-width: 440px;
+     
 }
 
 #month
@@ -47,9 +51,16 @@ body
     justify-content:flex-start;
     align-items: center;
     width: 100%;
+    min-width: 400px;
 }
 
-.message,.year,.months,.day
+
+.conmessage
+{
+    min-width: 440px;
+} 
+
+.year,.months,.day
 {
     display: none;
 }
@@ -58,3 +69,5 @@ body
 {
     color:red;
 }
+
+

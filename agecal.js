@@ -26,24 +26,36 @@ function calculate ()
    let user = new Date(month.val());
    const Datee = new Date();
    let presentYear = Datee.getFullYear()-user.getFullYear();
+   console.log("presentYear: " + presentYear);
    let presentMonth = Datee.getMonth()-user.getMonth();
-   let presentDay = Datee.getDay()-user.getDate();
+   console.log("presentMonth: " + presentMonth);
+   let presentDate = Datee.getDate()-user.getDate();
+   console.log("presentDay: " + presentDate);
 
-   if (presentDay< 0) {
-    presentMonth -= 1;
-    presentDay += new Date(Datee.getFullYear(),Datee.getMonth(),0).getDate();
-   }
-if (presentMonth < 0) {
-    presentYear -= 1;
-    presentMonth += 12;
-  }
-if(presentYear < 0)
+if(presentYear < 0 || presentDate<0 )
 {
-    year.text("");
+    alert("Hey Why are you so Hurry that's your future Just wait,utill to reach Their ok...");
+    let updateYear = year.text("");
+   
+    let updateDay = day.text("");
+}else
+{
+    updateYear = year.text(`${presentYear}years`);
+   updateMonth = months.text(`${presentMonth}Months`);
+    updateDay = day.text(`${presentDate}Days`);
+   
+  
+
 }
 
-   let updateYear = year.text(`${presentYear} year`);
-   let updateMonth = months.text(`${presentMonth} months`);
-   let updateDay = day.text(`${presentDay} day`);
+
+
+
+
+ 
+
+
+
+
    
 }
